@@ -15,5 +15,5 @@ print_even_to(N, I) when I =< N -> print_even_num(N - I + 1),
 
 print_num(N) -> io:format("Number:~p~n", [N]).
 
-print_even_num(N) when N rem 2 == 0 -> io:format("Number:~p~n", [N]);
+print_even_num(N) when N rem 2 == 0 -> print_num(N);
 print_even_num(N) when N rem 2 == 1 -> ok.
