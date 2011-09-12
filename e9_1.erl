@@ -1,5 +1,5 @@
 -module(e9_1).
--export([print_1_to_n/1, filter/2, print_even/1]).
+-export([print_1_to_n/1, filter/2, print_even/1, concact/1]).
 
 print_1_to_n(N) -> 
   List = lists:seq(1, N),
@@ -14,3 +14,6 @@ print_even(N) ->
       lists:seq(1, N)
     )
   ).
+
+concact(List) -> 
+  lists:foldl(fun(X, Sum) -> X ++ Sum end, [], List).
