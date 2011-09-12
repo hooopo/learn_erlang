@@ -1,5 +1,5 @@
 -module(e9_1).
--export([print_1_to_n/1, filter/2]).
+-export([print_1_to_n/1, filter/2, print_even/1]).
 
 print_1_to_n(N) -> 
   List = lists:seq(1, N),
@@ -8,3 +8,9 @@ print_1_to_n(N) ->
 filter(N, List) -> 
   lists:filter(fun(X) -> X =< N end, List).
 
+print_even(N) -> 
+  lists:foreach(fun(X) -> io:format("~p~n", [X]) end,
+    lists:filter(fun(X) -> X rem 2 == 0 end,
+      lists:seq(1, N)
+    )
+  ).
