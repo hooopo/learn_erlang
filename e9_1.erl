@@ -1,7 +1,10 @@
 -module(e9_1).
--export([print_1_to_n/1]).
+-export([print_1_to_n/1, filter/2]).
 
 print_1_to_n(N) -> 
   List = lists:seq(1, N),
   lists:foreach(fun(I) -> io:format("~p~n", [I]) end, List).
+
+filter(N, List) -> 
+  lists:filter(fun(X) -> X =< N end, List).
 
